@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial Maintenance Predictor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-cogs"></i> INDUSTRIAL MAINTENANCE PREDICTOR</h1>
+            <p class="subtitle">AI-powered predictive maintenance system</p>
+        </header>
+
+        <div class="dashboard">
+            <div class="sensor-input">
+                <h2><i class="fas fa-tachometer-alt"></i> SENSOR INPUTS</h2>
+                <form id="sensorForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="voltage">Voltage (V)</label>
+                            <input type="number" step="0.1" id="voltage" value="112" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="current">Current (A)</label>
+                            <input type="number" step="0.01" id="current" value="0.6" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="temperature">Temperature (°C)</label>
+                            <input type="number" step="0.1" id="temperature" value="21" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="power">Power (W)</label>
+                            <input type="number" step="0.1" id="power" value="66" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="humidity">Humidity (%)</label>
+                            <input type="number" step="0.1" id="humidity" value="40" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="vibration">Vibration (m/s²)</label>
+                            <input type="number" step="0.01" id="vibration" value="0.2" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ambient_temp">Ambient Temp (°C)</label>
+                            <input type="number" step="0.1" id="ambient_temp" value="20" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ambient_humidity">Ambient Humidity (%)</label>
+                            <input type="number" step="0.1" id="ambient_humidity" value="40" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="x_axis">X-Axis</label>
+                            <input type="number" step="0.1" id="x_axis" value="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="y_axis">Y-Axis</label>
+                            <input type="number" step="0.1" id="y_axis" value="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="z_axis">Z-Axis</label>
+                            <input type="number" step="0.1" id="z_axis" value="0" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-predict">
+                        <i class="fas fa-chart-line"></i> PREDICT  
+                    </button>
+                </form>
+            </div>
+
+            <div class="results">
+                <h2><i class="fas fa-clipboard-check"></i> PREDICTION RESULTS</h2>
+                <div class="result-cards">
+                    <div class="card maintenance-card">
+                        <h3>MAINTENANCE NEEDED</h3>
+                        <div class="value" id="maintenance-needed">-</div>
+                    </div>
+                    <div class="card type-card">
+                        <h3>MAINTENANCE TYPE</h3>
+                        <div class="value" id="maintenance-type">-</div>
+                    </div>
+                    <div class="card fault-card">
+                        <h3>FAULT DETECTED</h3>
+                        <div class="value" id="fault-detected">-</div>
+                    </div>
+                    <div class="card time-card">
+                        <h3>REPAIR TIME</h3>
+                        <div class="value" id="repair-time">-</div>
+                    </div>
+                </div>
+
+                <div class="sensor-values">
+                    <h3><i class="fas fa-microchip"></i> CURRENT SENSOR VALUES</h3>
+                    <div class="sensor-grid">
+                        <div class="sensor-item">
+                            <span>Voltage</span>
+                            <span id="display-voltage">-</span>
+                        </div>
+                        <div class="sensor-item">
+                            <span>Current</span>
+                            <span id="display-current">-</span>
+                        </div>
+                        <div class="sensor-item">
+                            <span>Temperature</span>
+                            <span id="display-temperature">-</span>
+                        </div>
+                        <div class="sensor-item">
+                            <span>Power</span>
+                            <span id="display-power">-</span>
+                        </div>
+                        <div class="sensor-item">
+                            <span>Humidity</span>
+                            <span id="display-humidity">-</span>
+                        </div>
+                        <div class="sensor-item">
+                            <span>Vibration</span>
+                            <span id="display-vibration">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Sensor Base Industrial Machine Maintenance Predictor </p>
+        </footer>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
